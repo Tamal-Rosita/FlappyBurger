@@ -25,7 +25,12 @@ namespace DoomFire
         [Range(0.2f, 1.5f)]
         [SerializeField] private float flameHeightRatio = 0.75f;
 
+        [SerializeField] private bool preWarmOnStart;
+
         [SerializeField] private bool useWind = true;
+
+        [Range(-2, 2)]
+        [SerializeField] private int windDirection = 1;
 
         [Header("Bounds & Palette")]
         [SerializeField] private bool matchBoxColliderSize = true;
@@ -150,10 +155,12 @@ namespace DoomFire
             _spriteRenderer.sprite = _fireSprite;
             _spriteRenderer.enabled = true;
 
-            // Pre-warm the simulation so flames are visible on frame 0.
-            for (var i = 0; i < _simHeight; i++)
+            if (preWarmOnStart)
             {
-                StepSimulation();
+                for (var i = 0; i < _simHeight; i++)
+                {
+                    StepSimulation();
+                }
             }
             UploadFireTexture();
         }
@@ -171,11 +178,10 @@ namespace DoomFire
                 {
                     var decay = Random.Range(0, maxDecay + 1);
                     var srcX = x;
-                    if (useWind)
+                    if (useWind && windDirection != 0)
                     {
-                        srcX += Random.Range(-1, 2);
-                        if (srcX < 0) srcX = 0;
-                        else if (srcX >= _simWidth) srcX = _simWidth - 1;
+                        var shift = Random.Range(0, 3) == 0 ? 0 : windDirection;
+                        srcX = Mathf.Clamp(x - shift, 0, _simWidth - 1);
                     }
 
                     var decayed = _fireBuffer[srcX + belowRowOffset] - decay;

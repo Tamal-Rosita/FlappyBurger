@@ -10,6 +10,7 @@ permalink: /getting-started
   <a href="{{ '/getting-started' | relative_url }}">Setup &amp; Builds</a>
   <a href="{{ '/privacy' | relative_url }}">Privacy</a>
   <a href="{{ '/terms' | relative_url }}">Terms</a>
+  <a class="nav-cta" href="https://tamalrosita.itch.io/flappy-bacon-a-tor" target="_blank" rel="noopener">Play on itch.io &rarr;</a>
 </nav>
 
 # Setup, Customization & Builds
@@ -47,7 +48,7 @@ Most gameplay values are exposed directly on scene components and prefabs:
 | Spawn Interval | `Game.unity` &rarr; `ObstacleSpawner.spawnInterval` | `2` s |
 | Gap Distance | `Game.unity` &rarr; `ObstacleSpawner.gapDistance` | `3.5` |
 | Obstacle Speed | `Assets/Prefabs/Obstacle.prefab` &rarr; `MoveOnAxis2D.speed` | `-2` |
-| Fire Update Rate / Grid | `Game.unity` &rarr; `Fire` &rarr; `DoomFireRenderer` | `0.075` s / `16` rows |
+| Fire Update Rate / Grid | `Game.unity` &rarr; `Fire` &rarr; `DoomFireRenderer` | `0.075` s / `32` rows (`6.66×1.87`, wind `+1`) |
 
 In Edit Mode, you can preview pipe spacing on `Obstacle.prefab` using the **SetDistance** and **SetSize** NaughtyAttributes buttons on `GapDistance`, `ChildrenDistance2D`, and `BoxCollider2DSize`.
 
@@ -83,13 +84,13 @@ In Edit Mode, you can preview pipe spacing on `Obstacle.prefab` using the **SetD
 ```text
 FlappyBurger/
 ├── Assets/
-│   ├── DoomFire/         # CPU DoomFire ScreenFire effect & demo scenes
+│   ├── DoomFire/         # DoomFireRenderer.cs, Materials/ (DoomFire.shader), Legacy/
 │   ├── Fonts/            # GrapeSoda font & TMP SDF asset
 │   ├── Icons/            # Android, iOS, and WebGL/PWA icon sets
 │   ├── Materials/        # SpriteScrolling shader & scrolling materials
 │   ├── Prefabs/          # Obstacle.prefab
 │   ├── Scenes/           # Main.unity, Game.unity
-│   ├── Scripts/          # GameManager, HealthMeter, Player, Obstacles, Skins, Sounds, UI
+│   ├── Scripts/          # GameManager, Player (HealthMeter), Obstacles, Skins, Sounds, UI
 │   ├── Skins/            # Heaven, Darkness, Inferno ScriptableObject themes
 │   ├── Sounds/           # Flap & explosion WAV SFX
 │   └── Sprites/          # Winged burger, pipes, seamless backgrounds, studio logos
@@ -97,5 +98,6 @@ FlappyBurger/
 ├── Press/                # Promotional cover art
 ├── ProjectSettings/      # Unity 6 project, build, input, and tag settings
 ├── Screenshots/          # Gameplay screenshots for each skin theme
-└── docs/                 # GitHub Pages documentation & legal pages
+├── docs/                 # GitHub Pages landing page, documentation & legal pages
+└── plans/                # Internal engineering plans & decision records
 ```

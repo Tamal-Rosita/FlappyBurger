@@ -1364,9 +1364,11 @@ MonoBehaviour:
   autoAspectWidth: 1
   maxGridWidth: 512
   flameHeightRatio: 0.75
+  preWarmOnStart: 0
   useWind: 1
+  windDirection: -1
   matchBoxColliderSize: 0
-  fallbackWorldSize: {x: 6.66, y: 1.87}
+  fallbackWorldSize: {x: 6.66, y: 1.75}
   gradient:
     serializedVersion: 2
     key0: {r: 0, g: 0, b: 0, a: 0}

@@ -2,7 +2,8 @@
 
 A Flappy Bird-inspired 2D arcade game made in **Unity 6 (`6000.0.85f2`)** by **Tamal Rosita**, starring a winged burger navigating scrolling cave pipes across three switchable themes.
 
-> **Full Documentation (GitHub Pages):** [`docs/index.md`](docs/index.md) — once GitHub Pages is enabled from `/docs`, browse it at `https://tamal-rosita.github.io/FlappyBurger/`.
+> **Play Now on itch.io:** https://tamalrosita.itch.io/flappy-bacon-a-tor
+> **Homepage & Docs:** https://tamalrosita.com/FlappyBurger/ ([`docs/index.md`](docs/index.md))
 
 ![Flappy BACON-A-TOR Cover](Press/FlappyBACON-A-TOR_cover.png)
 

@@ -38,12 +38,12 @@ Shader "Custom/DoomFire"
             #pragma multi_compile_local _ PIXELSNAP_ON
             #include "UnitySprites.cginc"
 
-            sampler2D palette_tex;
+            sampler2D _PaletteTex;
 
             fixed4 doom_fire_frag(v2f IN) : SV_Target
             {
                 fixed intensity = tex2D(_MainTex, IN.texcoord).r;
-                fixed4 col = tex2D(palette_tex, float2(intensity, 0.5)) * IN.color;
+                fixed4 col = tex2D(_PaletteTex, float2(intensity, 0.5)) * IN.color;
                 return col;
             }
             ENDCG

@@ -10,6 +10,7 @@ permalink: /architecture
   <a href="{{ '/getting-started' | relative_url }}">Setup &amp; Builds</a>
   <a href="{{ '/privacy' | relative_url }}">Privacy</a>
   <a href="{{ '/terms' | relative_url }}">Terms</a>
+  <a class="nav-cta" href="https://tamalrosita.itch.io/flappy-bacon-a-tor" target="_blank" rel="noopener">Play on itch.io &rarr;</a>
 </nav>
 
 # Technical Architecture
@@ -51,7 +52,6 @@ Both scenes are registered in `ProjectSettings/EditorBuildSettings.asset`:
 | Script | Key Responsibility |
 | --- | --- |
 | `GameManager.cs` | Manages `isPlaying`, `score`, `Time.timeScale`, `ScoreCanvas`, and `GameOverCanvas`. Calls `Reset()` in `Start()`. |
-| `HealthMeter.cs` *(WIP)* | Attached to `Player` in `Game.unity` (`maxHealth = 3`). Exposes `AddHealth(int)` and `UnityEvent` hooks (`onDeath`, `onHealthChange`, `onHealthIncrease`, `onHealthDecrease`), not yet wired to `GameManager`. |
 | `SceneSelection.cs` | Wraps `SceneManager.LoadScene(string)` for UI button transitions between `Main` and `Game`. |
 | `ApplicationVersionTMProUI.cs` | Namespace `Metadrive.Utils`. Populates a `TextMeshProUGUI` label with `prefix + Application.version` on `Start()`. |
 
@@ -62,6 +62,7 @@ Both scenes are registered in `ProjectSettings/EditorBuildSettings.asset`:
 | `PlayerInput.cs` | Polls `KeyCode.Space`, `Mouse0`, and `TouchPhase.Began` in `Update()` and invokes `onAction`. |
 | `GravityMovement.cs` | Custom kinematic vertical movement (`gravity = -9`, `jumpForce = 4.5` in `Game.unity`). Invokes `onJump` when flapping and resets position to `Vector3.zero` via `Restart()`. |
 | `CollisionEvents.cs` | `OnTriggerEnter2D` router checking collider tags `"Enemy"` (`onEnemyTrigger`) and `"Score"` (`onScoreTrigger`). |
+| `HealthMeter.cs` *(WIP)* | Attached to `Player` in `Game.unity` (`maxHealth = 3`). Exposes `AddHealth(int)` and `UnityEvent` hooks (`onDeath`, `onHealthChange`, `onHealthIncrease`, `onHealthDecrease`), not yet wired to `GameManager`. |
 
 ### Obstacles (`Assets/Scripts/Obstacles/` & `Assets/Scripts/Models/`)
 
@@ -87,7 +88,7 @@ Both scenes are registered in `ProjectSettings/EditorBuildSettings.asset`:
 | `RandomSound.cs` | Plays a random `SoundFX` (`AudioClip` + `volume`) via `AudioSource.PlayOneShot`. |
 | `SpriteScrolling.shader` | Custom `Custom/Sprite Scrolling` shader offsetting sprite UVs by `_Time * _ScrollSpeed`. |
 | `DoomFire.shader` | Custom `Custom/DoomFire` shader sampling an `R8` intensity texture and mapping colors through a `256x1` gradient LUT in 1 draw call. |
-| `DoomFireRenderer.cs` | Fixed-grid CPU Doom fire simulation (`R8` `Texture2D`, `FilterMode.Point`) rendered via `SpriteRenderer` over the bottom hazard strip (`ScreenFire.cs` retained for legacy demo scenes). |
+| `DoomFireRenderer.cs` | Namespace `DoomFire`. Fixed-grid CPU Doom fire simulation (`R8` `Texture2D`, `FilterMode.Point`) with bottom-up ignition and configurable rightward wind drift rendered via `SpriteRenderer` (`ScreenFire.cs` retained for legacy demo scenes). |
 
 ---
 

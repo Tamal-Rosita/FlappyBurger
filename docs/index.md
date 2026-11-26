@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Overview
+title: Flappy BACON-A-TOR
 ---
 
 <nav class="doc-nav">
@@ -9,42 +9,60 @@ title: Overview
   <a href="{{ '/getting-started' | relative_url }}">Setup &amp; Builds</a>
   <a href="{{ '/privacy' | relative_url }}">Privacy</a>
   <a href="{{ '/terms' | relative_url }}">Terms</a>
+  <a class="nav-cta" href="https://tamalrosita.itch.io/flappy-bacon-a-tor" target="_blank" rel="noopener">Play on itch.io &rarr;</a>
 </nav>
 
-# Flappy Burger (*Flappy BACON-A-TOR*)
+<section class="hero-card">
+  <div>
+    <span class="hero-eyebrow">Tamal Rosita &bull; Unity 6 Arcade</span>
+    <h1>Flappy <span class="hero-accent">BACON-A-TOR</span></h1>
+    <p>
+      Pilot a winged burger through scrolling cave pipes, dodge scorching Doom-style flames,
+      and swap between three unlock-free worlds in this fast one-button Flappy Bird tribute.
+    </p>
+    <div class="cta-group">
+      <a class="btn btn-primary" href="https://tamalrosita.itch.io/flappy-bacon-a-tor" target="_blank" rel="noopener">
+        Play Now! (itch.io)
+      </a>
+      <a class="btn btn-secondary" href="{{ '/architecture' | relative_url }}">
+        Technical Docs
+      </a>
+      <a class="btn btn-secondary" href="https://github.com/Tamal-Rosita/FlappyBurger" target="_blank" rel="noopener">
+        GitHub Repo
+      </a>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="{{ '/assets/images/FlappyBACON-A-TOR_cover.png' | relative_url }}" alt="Flappy BACON-A-TOR Cover">
+  </div>
+</section>
 
-**Flappy Burger** (branded in-game as **Flappy BACON-A-TOR**) is a portrait-mode 2D arcade game built with **Unity 6 (`6000.0.85f2`)** by **Tamal Rosita**. Tap, click, or press Space to keep a winged burger aloft through scrolling cave pipes, earn points, and switch between three unlock-free visual themes.
+## Why Flappy Burger?
 
-![Flappy BACON-A-TOR Cover]({{ '/assets/images/FlappyBACON-A-TOR_cover.png' | relative_url }})
-
----
-
-## Project Snapshot
-
-| Property | Value |
-| --- | --- |
-| **Product Name** | Flappy Burger (`Flappy BACON-A-TOR`) |
-| **Studio / Company** | Tamal Rosita |
-| **Current Version** | `0.2.1` (Android `versionCode: 101`) |
-| **Unity Version** | `6000.0.85f2` (Unity 6) |
-| **Target Platforms** | Android, iOS, WebGL (PWA), Standalone |
-| **Orientation** | Portrait (`360x640` WebGL default) |
-| **Build Scenes** | `Main.unity` (Menu) &rarr; `Game.unity` (Gameplay) |
-
----
-
-## Gameplay & Controls
-
-- **One-button arcade loop**: Tap the screen, left-click, or press `Space` to start the run and flap upward.
-- **Scoring**: Passing through the center trigger between each top and bottom pipe increments the live score counter.
-- **Game Over**: Colliding with pipes, the ceiling, or the lower hazard triggers a randomized explosion sound effect, freezes time (`Time.timeScale = 0`), and opens the Game Over overlay with **AGAIN** (retry) and **EXIT** (return to main menu).
-- **DoomFire Effect**: The gameplay scene renders a fixed-grid retro Doom-style fire strip (`DoomFireRenderer` + `Custom/DoomFire` shader) along the bottom hazard collider in a single GPU draw call.
+<div class="feature-grid">
+  <div class="feature-card">
+    <h3>One-Tap Controls</h3>
+    <p>Tap on mobile, left-click, or press <code>Space</code> to start your run and flap upward with crisp arcade gravity.</p>
+  </div>
+  <div class="feature-card">
+    <h3>3 Switchable Worlds</h3>
+    <p>Choose between <strong>Heaven</strong>, <strong>Darkness</strong>, and <strong>Inferno</strong> themes—saved automatically in <code>PlayerPrefs</code>.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Retro DoomFire Hazard</h3>
+    <p>Fixed-grid cellular fire simulation rendered with a custom <code>Custom/DoomFire</code> LUT shader for 60 FPS mobile &amp; WebGL play.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Built in Unity 6</h3>
+    <p>Clean Inspector-tunable <code>UnityEvent</code> architecture ready for Android, iOS, and WebGL PWA builds.</p>
+  </div>
+</div>
 
 ---
 
 ## Visual Themes (Skins)
 
-Players can switch themes in the **Skins** menu (`Main.unity`). The selected theme is saved locally via `PlayerPrefs` (`"Skin"`) and applied across the background sprite, background tint, camera clear color, and UI button colors.
+Switch themes anytime from the **Skins** menu in [`Main.unity`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/Scenes/Main.unity). Each `SkinScriptableObject` restyles the scrolling background, camera backdrop, and UI buttons together.
 
 <div class="screenshot-grid">
   <figure>
@@ -61,6 +79,36 @@ Players can switch themes in the **Skins** menu (`Main.unity`). The selected the
   </figure>
 </div>
 
+<div class="play-banner">
+  <div>
+    <strong>Ready to take flight?</strong>
+    <p>Play the latest WebGL build directly in your browser on itch.io.</p>
+  </div>
+  <div class="cta-group">
+    <a class="btn btn-primary" href="https://tamalrosita.itch.io/flappy-bacon-a-tor" target="_blank" rel="noopener">
+      Play Now on itch.io &rarr;
+    </a>
+    <a class="btn btn-outline" href="{{ '/getting-started' | relative_url }}">
+      Build &amp; Setup Guide
+    </a>
+  </div>
+</div>
+
+---
+
+## Project Snapshot
+
+| Property | Value |
+| --- | --- |
+| **Game Title** | Flappy Burger (`Flappy BACON-A-TOR`) |
+| **Studio** | Tamal Rosita |
+| **Play Online** | [tamalrosita.itch.io/flappy-bacon-a-tor](https://tamalrosita.itch.io/flappy-bacon-a-tor) |
+| **Homepage** | [tamalrosita.com/FlappyBurger/](https://tamalrosita.com/FlappyBurger/) |
+| **Current Version** | `0.2.1` (Android `versionCode: 101`) |
+| **Unity Version** | `6000.0.85f2` (Unity 6) |
+| **Target Platforms** | WebGL (PWA), Android, iOS, Standalone |
+| **Build Scenes** | `Main.unity` (Menu) &rarr; `Game.unity` (Gameplay) |
+
 ---
 
 ## Feature Status & Roadmap
@@ -73,7 +121,7 @@ Players can switch themes in the **Skins** menu (`Main.unity`). The selected the
 - Procedural pipe spawning with Inspector-tunable gap distance, spawn rate, and vertical variation
 - Live score HUD and Game Over retry/exit flow
 - Randomized flap and explosion sound effects
-- Hybrid fixed-grid DoomFire hazard strip (`DoomFireRenderer.cs` + `Custom/DoomFire` shader)
+- Hybrid fixed-grid DoomFire hazard strip (`DoomFireRenderer.cs` + `Custom/DoomFire` shader) with bottom-up ignition and rightward wind drift
 - Android, iOS, and WebGL PWA icon & build assets
 
 ### In Progress / Roadmap
@@ -84,7 +132,7 @@ Players can switch themes in the **Skins** menu (`Main.unity`). The selected the
 
 ---
 
-## Documentation Pages
+## Documentation & Legal
 
 - [**Technical Architecture**]({{ '/architecture' | relative_url }}) — Scene hierarchy, script reference, event wiring, shaders, and asset breakdown.
 - [**Setup & Builds**]({{ '/getting-started' | relative_url }}) — Unity 6 setup, OpenUPM packages, Inspector tuning, adding skins, and platform builds.

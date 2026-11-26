@@ -98,7 +98,8 @@ Keep the classic retro Doom fire cellular automaton while reducing rendering fro
 ## Pre-PR Verification Checklist
 
 - [x] Apply `FindObjectsByType` fix in [`SkinSystem.cs`](../Assets/Scripts/Skins/SkinSystem.cs#L23)
-- [x] Implement fixed-grid `R8` + LUT shader DoomFire replacement ([`DoomFireRenderer.cs`](../Assets/DoomFire/DoomFireRenderer.cs), [`DoomFire.shader`](../Assets/Materials/DoomFire.shader), [`DoomFire.mat`](../Assets/Materials/DoomFire.mat), [`Game.unity`](../Assets/Scenes/Game.unity))
+- [x] Implement fixed-grid `R8` + LUT shader DoomFire replacement ([`DoomFireRenderer.cs`](../Assets/DoomFire/DoomFireRenderer.cs), [`DoomFire.shader`](../Assets/DoomFire/Materials/DoomFire.shader), [`DoomFire.mat`](../Assets/DoomFire/Materials/DoomFire.mat), [`Game.unity`](../Assets/Scenes/Game.unity))
+- [x] Post-test DoomFire tuning: bottom-up flame ignition (`preWarmOnStart = false`), rightward wind drift (`windDirection = 1`), and `32`-row `6.66×1.87` bounds in [`Game.unity`](../Assets/Scenes/Game.unity)
+- [x] Upgrade GitHub Pages landing page (`https://tamalrosita.com/FlappyBurger/`) with **Play Now!** CTAs linking to `https://tamalrosita.itch.io/flappy-bacon-a-tor`
 - [x] Cleanup confirmation (`Press/FlappyBACON-A-TOR_cover.png~` removed; `UserSettings/` retained)
-- [ ] Test `Main.unity` and `Game.unity` in Editor + WebGL/Android build
-- [ ] Commit changes and open PR from `update/unity-6` → `main`
+- [ ] Re-verify `DoomFireRenderer` ignition & wind in Unity Editor, commit changes, and open PR from `update/unity-6` → `main`

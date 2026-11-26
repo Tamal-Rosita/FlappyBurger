@@ -1,3 +1,19 @@
+---
+layout: default
+title: "Plan 001: Unity 6 Migration & DoomFire Optimization"
+permalink: /plans/001-unity6-migration-and-doomfire-optimization
+---
+
+<nav class="doc-nav">
+  <a href="{{ '/' | relative_url }}">Overview</a>
+  <a href="{{ '/architecture' | relative_url }}">Architecture</a>
+  <a href="{{ '/getting-started' | relative_url }}">Setup &amp; Builds</a>
+  <a href="{{ '/plans/' | relative_url }}">Plans</a>
+  <a href="{{ '/privacy' | relative_url }}">Privacy</a>
+  <a href="{{ '/terms' | relative_url }}">Terms</a>
+  <a class="nav-cta" href="https://tamalrosita.itch.io/flappy-bacon-a-tor" target="_blank" rel="noopener">Play on itch.io &rarr;</a>
+</nav>
+
 # Plan 001: Unity 6 Migration Audit & DoomFire Optimization
 
 - **Status**: Completed
@@ -11,21 +27,21 @@
 Comparing `main` (`2022.3.21f1`) against `update/unity-6` (`6000.0.85f2`), the Unity Editor upgrade completed **cleanly with no compiler, shader, or scene serialization errors**.
 
 ### Verified Healthy
-- **Editor & Packages**: [`ProjectSettings/ProjectVersion.txt`](../ProjectSettings/ProjectVersion.txt) is updated to `6000.0.85f2`. [`Packages/manifest.json`](../Packages/manifest.json) cleanly applies Unity 6's consolidation of `com.unity.textmeshpro` into `com.unity.ugui` (`2.0.0`), upgrades 2D packages (`2d.animation` `10.2.4`, `2d.spriteshape` `10.1.1`), removes deprecated `com.unity.ide.vscode`, and updates OpenUPM dependencies (`naughtyattributes` `2.1.6`, `playerprefseditor` `1.2.5`).
-- **Scenes & Assets**: [`Main.unity`](../Assets/Scenes/Main.unity), [`Game.unity`](../Assets/Scenes/Game.unity), [`GrapeSoda SDF.asset`](../Assets/Fonts/GrapeSoda%20SDF.asset), and [`Background_Sprite Scrolling.mat`](../Assets/Materials/Background_Sprite%20Scrolling.mat) are properly re-serialized for Unity 6 (`Rigidbody2D` `m_LinearDamping`, `CircleCollider2D` v3, TMP `m_TextWrappingMode`).
-- **Logs & Shaders**: No C# assembly errors (`LogAssemblyErrors (0ms)`) and no shader compiler warnings or errors in `Logs/shadercompiler-UnityShaderCompiler-*.log`. Render pipeline remains Built-in RP (`m_CustomRenderPipeline: {fileID: 0}` in [`ProjectSettings/GraphicsSettings.asset`](../ProjectSettings/GraphicsSettings.asset)).
+- **Editor & Packages**: [`ProjectSettings/ProjectVersion.txt`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/ProjectSettings/ProjectVersion.txt) is updated to `6000.0.85f2`. [`Packages/manifest.json`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Packages/manifest.json) cleanly applies Unity 6's consolidation of `com.unity.textmeshpro` into `com.unity.ugui` (`2.0.0`), upgrades 2D packages (`2d.animation` `10.2.4`, `2d.spriteshape` `10.1.1`), removes deprecated `com.unity.ide.vscode`, and updates OpenUPM dependencies (`naughtyattributes` `2.1.6`, `playerprefseditor` `1.2.5`).
+- **Scenes & Assets**: [`Main.unity`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/Scenes/Main.unity), [`Game.unity`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/Scenes/Game.unity), [`GrapeSoda SDF.asset`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/Fonts/GrapeSoda%20SDF.asset), and [`Background_Sprite Scrolling.mat`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/Materials/Background_Sprite%20Scrolling.mat) are properly re-serialized for Unity 6 (`Rigidbody2D` `m_LinearDamping`, `CircleCollider2D` v3, TMP `m_TextWrappingMode`).
+- **Logs & Shaders**: No C# assembly errors (`LogAssemblyErrors (0ms)`) and no shader compiler warnings or errors in `Logs/shadercompiler-UnityShaderCompiler-*.log`. Render pipeline remains Built-in RP (`m_CustomRenderPipeline: {fileID: 0}` in [`ProjectSettings/GraphicsSettings.asset`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/ProjectSettings/GraphicsSettings.asset)).
 
 ### Minor Pre-PR Cleanup Items (Recommended Before Merging to `main`)
-1. **Replace obsolete API in [`SkinSystem.cs`](../Assets/Scripts/Skins/SkinSystem.cs#L23)**: `FindObjectsOfType<SkinImage>()` is marked obsolete in Unity 6 — update to `FindObjectsByType<SkinImage>(FindObjectsSortMode.None)`.
-2. **Remove backup image artifact**: Delete [`Press/FlappyBACON-A-TOR_cover.png~`](../Press/FlappyBACON-A-TOR_cover.png~) (editor backup file) if unintended.
-3. **Optional `UserSettings/` untrack**: `UserSettings/Layouts/default-6000.dwlt` currently shows noisy layout diffs in `git status`. Consider adding `UserSettings/` to [`.gitignore`](../.gitignore) and untracking it (`git rm -r --cached UserSettings/`).
-4. **Commit documentation & `.gitignore` updates**: Commit [`docs/`](../docs), [`README.md`](../README.md), [`.gitignore`](../.gitignore), untracked `Logs/`, and [`plans/`](README.md).
+1. **Replace obsolete API in [`SkinSystem.cs`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/Scripts/Skins/SkinSystem.cs#L23)**: `FindObjectsOfType<SkinImage>()` is marked obsolete in Unity 6 — update to `FindObjectsByType<SkinImage>(FindObjectsSortMode.None)`.
+2. **Remove backup image artifact**: Delete `Press/FlappyBACON-A-TOR_cover.png~` (editor backup file) if unintended.
+3. **Optional `UserSettings/` untrack**: `UserSettings/Layouts/default-6000.dwlt` currently shows noisy layout diffs in `git status`. Consider adding `UserSettings/` to [`.gitignore`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/.gitignore) and untracking it (`git rm -r --cached UserSettings/`).
+4. **Commit documentation & `.gitignore` updates**: Commit [`docs/`](../index.md), [`README.md`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/README.md), [`.gitignore`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/.gitignore), untracked `Logs/`, and [`plans/`](index.md).
 
 ---
 
 ## Part 2: Why `ScreenFire` Lags on Mobile & WebGL
 
-Inspecting [`ScreenFire.cs`](../Assets/DoomFire/ScreenFire.cs) and the `Fire` GameObject in [`Game.unity`](../Assets/Scenes/Game.unity):
+Inspecting [`ScreenFire.cs`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/DoomFire/ScreenFire.cs) and the `Fire` GameObject in [`Game.unity`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/Scenes/Game.unity):
 
 1. **Resolution-Dependent Cell Explosion**:
    - `Game.unity` sets `tileSize = 5` and `size = 5`.
@@ -57,7 +73,7 @@ Keep the classic retro Doom fire cellular automaton while reducing rendering fro
 ### Step-by-Step Implementation Plan
 
 #### 1. Replace `Screen.width`/`Screen.height` with Fixed Logical Grid Dimensions
-- In a refactored fire component (e.g., `DoomFireEffect.cs`, replacing `OnGUI` in [`ScreenFire.cs`](../Assets/DoomFire/ScreenFire.cs) while keeping [`Assets/DoomFire/Scenes/`](../Assets/DoomFire/Scenes) intact if needed):
+- In a refactored fire component (e.g., `DoomFireEffect.cs`, replacing `OnGUI` in [`ScreenFire.cs`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/DoomFire/ScreenFire.cs) while keeping [`Assets/DoomFire/Scenes/`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/DoomFire/Scenes) intact if needed):
   - Expose fixed `gridWidth` (e.g., `96`–`128`) and `gridHeight` (e.g., `32`–`48`) instead of dividing `Screen.width`/`Screen.height` by `tileSize`.
   - Optionally support `autoAspectWidth` (derive `gridWidth = Mathf.RoundToInt(gridHeight * aspect)` clamped to a safe max like `160`) so aspect ratios never stretch pixels while keeping cell count bounded (`<= 7,680` cells regardless of device DPI).
   - Position/scale the fire quad strictly over the **bottom hazard strip** (matching `Fire`'s `BoxCollider2D` at `y = -5.6` in `Game.unity`) rather than simulating empty transparent space across the full screen height.
@@ -72,12 +88,12 @@ Keep the classic retro Doom fire cellular automaton while reducing rendering fro
 
 #### 3. Bake `Gradient` into a `256x1` LUT Texture & Render via Custom Shader
 - Bake the Inspector `Gradient` once in `Start()` / `OnValidate()` into a `256x1` `Texture2D` (`TextureFormat.RGBA32`, `FilterMode.Bilinear`, `TextureWrapMode.Clamp`).
-- Create `Assets/Materials/DoomFire.shader` (`Custom/DoomFire`, Built-in RP transparent unlit shader matching [`SpriteScrolling.shader`](../Assets/Materials/SpriteScrolling.shader) conventions):
+- Create `Assets/Materials/DoomFire.shader` (`Custom/DoomFire`, Built-in RP transparent unlit shader matching [`SpriteScrolling.shader`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/Materials/SpriteScrolling.shader) conventions):
   - Samples `_MainTex` (the `R8` simulation texture) with `tex2D(_MainTex, i.uv).r`.
   - Maps intensity `r` through `_PaletteTex` (`tex2D(_PaletteTex, float2(r, 0.5))`).
   - Optional `_TileTex` (`Circle.png` / `Square.png` / `escama.png`): tiles across `frac(i.uv * float2(_GridWidth, _GridHeight))` in the fragment shader so retro circular/scaled fire particles render in **1 single draw call**.
 
-#### 4. Scene Integration in [`Game.unity`](../Assets/Scenes/Game.unity)
+#### 4. Scene Integration in [`Game.unity`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/Scenes/Game.unity)
 - Attach the shader material to a world-space quad / `SpriteRenderer` / `RawImage` on `Fire` (using the `Environment` or `Player` sorting layer so `ScoreCanvas` and `GameOverCanvas` render cleanly in front of the flames).
 - Remove `OnGUI()` completely from the gameplay path.
 - Verify behavior across:
@@ -97,9 +113,9 @@ Keep the classic retro Doom fire cellular automaton while reducing rendering fro
 
 ## Pre-PR Verification Checklist
 
-- [x] Apply `FindObjectsByType` fix in [`SkinSystem.cs`](../Assets/Scripts/Skins/SkinSystem.cs#L23)
-- [x] Implement fixed-grid `R8` + LUT shader DoomFire replacement ([`DoomFireRenderer.cs`](../Assets/DoomFire/DoomFireRenderer.cs), [`DoomFire.shader`](../Assets/DoomFire/Materials/DoomFire.shader), [`DoomFire.mat`](../Assets/DoomFire/Materials/DoomFire.mat), [`Game.unity`](../Assets/Scenes/Game.unity))
-- [x] Post-test DoomFire tuning: bottom-up flame ignition (`preWarmOnStart = false`), rightward wind drift (`windDirection = 1`), `32`-row `6.66×1.87` bounds in [`Game.unity`](../Assets/Scenes/Game.unity), and `_PaletteTex` sampler fix in [`DoomFire.shader`](../Assets/DoomFire/Materials/DoomFire.shader)
+- [x] Apply `FindObjectsByType` fix in [`SkinSystem.cs`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/Scripts/Skins/SkinSystem.cs#L23)
+- [x] Implement fixed-grid `R8` + LUT shader DoomFire replacement ([`DoomFireRenderer.cs`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/DoomFire/DoomFireRenderer.cs), [`DoomFire.shader`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/DoomFire/Materials/DoomFire.shader), [`DoomFire.mat`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/DoomFire/Materials/DoomFire.mat), [`Game.unity`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/Scenes/Game.unity))
+- [x] Post-test DoomFire tuning: bottom-up flame ignition (`preWarmOnStart = false`), rightward wind drift (`windDirection = 1`), `32`-row `6.66×1.87` bounds in [`Game.unity`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/Scenes/Game.unity), and `_PaletteTex` sampler fix in [`DoomFire.shader`](https://github.com/Tamal-Rosita/FlappyBurger/blob/main/Assets/DoomFire/Materials/DoomFire.shader)
 - [x] Upgrade GitHub Pages landing page (`https://tamalrosita.com/FlappyBurger/`) with **Play Now!** CTAs linking to `https://tamalrosita.itch.io/flappy-bacon-a-tor`
 - [x] Cleanup confirmation (`Press/FlappyBACON-A-TOR_cover.png~` removed; `UserSettings/` retained)
 - [x] Verify `DoomFireRenderer` ignition, wind, and gameplay in Unity Editor and merge `update/unity-6` → `main`

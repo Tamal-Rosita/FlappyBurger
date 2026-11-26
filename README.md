@@ -5,7 +5,7 @@ A Flappy Bird-inspired 2D arcade game made in **Unity 6 (`6000.0.85f2`)** by **T
 > **Play Now on itch.io:** https://tamalrosita.itch.io/flappy-bacon-a-tor
 > **Homepage & Docs:** https://tamalrosita.com/FlappyBurger/ ([`docs/index.md`](docs/index.md))
 
-![Flappy BACON-A-TOR Cover](Press/FlappyBACON-A-TOR_cover.png)
+![Flappy BACON-A-TOR Cover](docs/assets/images/press/FlappyBACON-A-TOR_cover.png)
 
 ## Features
 
@@ -17,7 +17,7 @@ A Flappy Bird-inspired 2D arcade game made in **Unity 6 (`6000.0.85f2`)** by **T
 
 ### Roadmap / Work in Progress
 
-- [ ] Music system & "Now Playing" toast via [`Aestial/Unity-OpenMusicPlayer`](https://github.com/Aestial/Unity-OpenMusicPlayer) *(see [Plan 002](plans/002-pooling-highscore-and-music-player.md))*
+- [ ] Music system & "Now Playing" toast via [`Aestial/Unity-OpenMusicPlayer`](https://github.com/Aestial/Unity-OpenMusicPlayer) *(see [Plan 002](docs/plans/002-pooling-highscore-and-music-player.md))*
 - [ ] Object pooling integration (`Pool.cs` in `Assets/Scripts/Models/Pool.cs`)
 - [ ] Persistent high-score storage (`PlayerPrefs`)
 - [ ] Health bar UI (`HealthMeter.cs`, deferred) & dedicated flight/death animations
@@ -26,7 +26,7 @@ A Flappy Bird-inspired 2D arcade game made in **Unity 6 (`6000.0.85f2`)** by **T
 
 | Heaven | Darkness | Inferno |
 | :---: | :---: | :---: |
-| ![Heaven](Screenshots/Baconator-Heaven.png) | ![Darkness](Screenshots/Baconator-Darkness.png) | ![Inferno](Screenshots/Baconator-Hell.png) |
+| ![Heaven](docs/assets/images/screenshots/Baconator-Heaven.png) | ![Darkness](docs/assets/images/screenshots/Baconator-Darkness.png) | ![Inferno](docs/assets/images/screenshots/Baconator-Hell.png) |
 
 ## Quick Start
 
@@ -39,5 +39,6 @@ A Flappy Bird-inspired 2D arcade game made in **Unity 6 (`6000.0.85f2`)** by **T
 - [Overview](docs/index.md)
 - [Technical Architecture & Script Reference](docs/architecture.md)
 - [Setup, Customization & Builds](docs/getting-started.md)
+- [Development Plans & Decision Log](docs/plans/index.md)
 - [Privacy Policy](docs/privacy.md)
 - [Terms & Conditions](docs/terms.md)

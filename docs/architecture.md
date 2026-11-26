@@ -8,6 +8,7 @@ permalink: /architecture
   <a href="{{ '/' | relative_url }}">Overview</a>
   <a href="{{ '/architecture' | relative_url }}">Architecture</a>
   <a href="{{ '/getting-started' | relative_url }}">Setup &amp; Builds</a>
+  <a href="{{ '/plans/' | relative_url }}">Plans</a>
   <a href="{{ '/privacy' | relative_url }}">Privacy</a>
   <a href="{{ '/terms' | relative_url }}">Terms</a>
   <a class="nav-cta" href="https://tamalrosita.itch.io/flappy-bacon-a-tor" target="_blank" rel="noopener">Play on itch.io &rarr;</a>

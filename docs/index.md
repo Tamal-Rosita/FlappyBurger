@@ -7,6 +7,7 @@ title: Flappy BACON-A-TOR
   <a href="{{ '/' | relative_url }}">Overview</a>
   <a href="{{ '/architecture' | relative_url }}">Architecture</a>
   <a href="{{ '/getting-started' | relative_url }}">Setup &amp; Builds</a>
+  <a href="{{ '/plans/' | relative_url }}">Plans</a>
   <a href="{{ '/privacy' | relative_url }}">Privacy</a>
   <a href="{{ '/terms' | relative_url }}">Terms</a>
   <a class="nav-cta" href="https://tamalrosita.itch.io/flappy-bacon-a-tor" target="_blank" rel="noopener">Play on itch.io &rarr;</a>
@@ -33,7 +34,7 @@ title: Flappy BACON-A-TOR
     </div>
   </div>
   <div class="hero-media">
-    <img src="{{ '/assets/images/FlappyBACON-A-TOR_cover.png' | relative_url }}" alt="Flappy BACON-A-TOR Cover">
+    <img src="{{ '/assets/images/press/FlappyBACON-A-TOR_cover.png' | relative_url }}" alt="Flappy BACON-A-TOR Cover">
   </div>
 </section>
 
@@ -66,15 +67,15 @@ Switch themes anytime from the **Skins** menu in [`Main.unity`](https://github.c
 
 <div class="screenshot-grid">
   <figure>
-    <img src="{{ '/assets/images/Baconator-Heaven.png' | relative_url }}" alt="Heaven Skin">
+    <img src="{{ '/assets/images/screenshots/Baconator-Heaven.png' | relative_url }}" alt="Heaven Skin">
     <figcaption><strong>Heaven</strong> — Bright sky &amp; pastel buttons</figcaption>
   </figure>
   <figure>
-    <img src="{{ '/assets/images/Baconator-Darkness.png' | relative_url }}" alt="Darkness Skin">
+    <img src="{{ '/assets/images/screenshots/Baconator-Darkness.png' | relative_url }}" alt="Darkness Skin">
     <figcaption><strong>Darkness</strong> — Teal cavern &amp; neon magenta UI</figcaption>
   </figure>
   <figure>
-    <img src="{{ '/assets/images/Baconator-Hell.png' | relative_url }}" alt="Inferno Skin">
+    <img src="{{ '/assets/images/screenshots/Baconator-Hell.png' | relative_url }}" alt="Inferno Skin">
     <figcaption><strong>Inferno</strong> — Crimson underworld &amp; purple UI</figcaption>
   </figure>
 </div>
@@ -136,4 +137,5 @@ Switch themes anytime from the **Skins** menu in [`Main.unity`](https://github.c
 
 - [**Technical Architecture**]({{ '/architecture' | relative_url }}) — Scene hierarchy, script reference, event wiring, shaders, and asset breakdown.
 - [**Setup & Builds**]({{ '/getting-started' | relative_url }}) — Unity 6 setup, OpenUPM packages, Inspector tuning, adding skins, and platform builds.
+- [**Development Plans & Roadmap**]({{ '/plans/' | relative_url }}) — Engineering audits, optimization plans, and upcoming feature specs.
 - [**Privacy Policy**]({{ '/privacy' | relative_url }}) &bull; [**Terms & Conditions**]({{ '/terms' | relative_url }}) — Published store legal pages.

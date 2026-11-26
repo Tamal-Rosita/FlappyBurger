@@ -809,8 +809,10 @@ PlayerSettings:
   ps4IncludedModules: []
   ps4attribVROutputEnabled: 0
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: cfedc4f22775d4a4c8a8c9345218c1b7, type: 3}
-  splashScreenBackgroundSourcePortrait: {fileID: 21300000, guid: cfedc4f22775d4a4c8a8c9345218c1b7, type: 3}
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: cfedc4f22775d4a4c8a8c9345218c1b7,
+    type: 3}
+  splashScreenBackgroundSourcePortrait: {fileID: 21300000, guid: cfedc4f22775d4a4c8a8c9345218c1b7,
+    type: 3}
   blurSplashScreenBackground: 1
   spritePackerPolicy: 
   webGLMemorySize: 32
@@ -821,7 +823,7 @@ PlayerSettings:
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: APPLICATION:PWA
+  webGLTemplate: APPLICATION:Minimal
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 2
@@ -908,7 +910,8 @@ PlayerSettings:
   metroDefaultTileSize: 1
   metroTileForegroundText: 2
   metroTileBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21568628, a: 0}
-  metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628, a: 1}
+  metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628,
+    a: 1}
   metroSplashScreenUseBackgroundColor: 0
   syncCapabilities: 0
   platformCapabilities: {}

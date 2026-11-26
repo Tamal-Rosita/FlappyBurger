@@ -1,0 +1,50 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.doc-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 24px 0;
+  padding: 10px 12px;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+}
+
+.doc-nav a {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.doc-nav a:hover {
+  background: #eaeef2;
+  text-decoration: none;
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.screenshot-grid figure {
+  margin: 0;
+  text-align: center;
+}
+
+.screenshot-grid img {
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+}
+
+.screenshot-grid figcaption {
+  font-size: 0.85em;
+  color: #57606a;
+  margin-top: 4px;
+}

@@ -1,30 +1,43 @@
-# Flappy Burger
+# Flappy Burger (*Flappy BACON-A-TOR*)
 
-## Game Requirements
-Juego: tipo *Flappy Bird*
+A Flappy Bird-inspired 2D arcade game made in **Unity 6 (`6000.0.85f2`)** by **Tamal Rosita**, starring a winged burger navigating scrolling cave pipes across three switchable themes.
 
-Gameplay: Con tap el flappy bird salta para no chocar con los obstáculos.
+> **Play Now on itch.io:** https://tamalrosita.itch.io/flappy-bacon-a-tor
+> **Homepage & Docs:** https://tamalrosita.com/FlappyBurger/ ([`docs/index.md`](docs/index.md))
 
-### Contiene:
-- [ ] Barra de vida
-- [x] Tap para saltar
-- [x] Contador de puntos en pantalla durante el gameplay
-- [x] Menú principal
-- [x] Gameplay
-- [ ] Pantalla de resultados
-- [ ] Personaje: animacion de vuelo y muerte
-- [x] Animación idle del personaje en menu principal
-- [x] Logo del juego en pantalla principal
-- [x] Parallax Scrolling background en el gameplay.
+![Flappy BACON-A-TOR Cover](Press/FlappyBACON-A-TOR_cover.png)
 
-### Menu principal:
-- [x] Botón jugar
-- [x] Elección de skin (3 skins)
-- [x] Confirmación de skin
+## Features
 
-### Notas:
-- [ ] El juego finaliza cuando el jugador se queda sin vida
-- [x] Orientación portrait only
-- [x] Mínimo de escenas: 2
-- [x] Editar gameplay en inspector
-- [x] Se usará Unity 2020.3.4f1
+- **One-button gameplay**: Tap, left-click, or press `Space` to start and flap.
+- **Three selectable visual themes**: **Heaven**, **Darkness**, and **Inferno** (`ScriptableObject` skins persisted via `PlayerPrefs`).
+- **Scrolling background & DoomFire hazard strip**: Custom `Custom/Sprite Scrolling` shader plus fixed-grid `DoomFireRenderer` (`Assets/DoomFire/DoomFireRenderer.cs`) with `Custom/DoomFire` LUT shader.
+- **Inspector-driven tuning**: Gravity, jump force, spawn interval, pipe gap distance, and obstacle speed are all exposed in the Inspector (`NaughtyAttributes` buttons included).
+- **Multi-platform ready**: Configured for Android (`com.tamalrosita.flappyburger`), iOS (`com.Aestial.FlappyBurger`), and WebGL (PWA).
+
+### Roadmap / Work in Progress
+
+- [ ] Music system & "Now Playing" toast via [`Aestial/Unity-OpenMusicPlayer`](https://github.com/Aestial/Unity-OpenMusicPlayer) *(see [Plan 002](plans/002-pooling-highscore-and-music-player.md))*
+- [ ] Object pooling integration (`Pool.cs` in `Assets/Scripts/Models/Pool.cs`)
+- [ ] Persistent high-score storage (`PlayerPrefs`)
+- [ ] Health bar UI (`HealthMeter.cs`, deferred) & dedicated flight/death animations
+
+## Themes
+
+| Heaven | Darkness | Inferno |
+| :---: | :---: | :---: |
+| ![Heaven](Screenshots/Baconator-Heaven.png) | ![Darkness](Screenshots/Baconator-Darkness.png) | ![Inferno](Screenshots/Baconator-Hell.png) |
+
+## Quick Start
+
+1. Open the project with **Unity `6000.0.85f2`**.
+2. Open `Assets/Scenes/Main.unity` (Menu & Skins) or `Assets/Scenes/Game.unity` (Gameplay).
+3. Switch the Game view to a **portrait** aspect ratio (e.g., `9:16` or `360x640`) and press **Play**.
+
+## Documentation & Legal
+
+- [Overview](docs/index.md)
+- [Technical Architecture & Script Reference](docs/architecture.md)
+- [Setup, Customization & Builds](docs/getting-started.md)
+- [Privacy Policy](docs/privacy.md)
+- [Terms & Conditions](docs/terms.md)

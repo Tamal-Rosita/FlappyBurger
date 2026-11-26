@@ -1,6 +1,6 @@
 # Plan 001: Unity 6 Migration Audit & DoomFire Optimization
 
-- **Status**: Implemented (Pending Testing & PR)
+- **Status**: Completed
 - **Date**: 2026-11-26
 - **Branch**: `update/unity-6` → `main`
 
@@ -99,7 +99,7 @@ Keep the classic retro Doom fire cellular automaton while reducing rendering fro
 
 - [x] Apply `FindObjectsByType` fix in [`SkinSystem.cs`](../Assets/Scripts/Skins/SkinSystem.cs#L23)
 - [x] Implement fixed-grid `R8` + LUT shader DoomFire replacement ([`DoomFireRenderer.cs`](../Assets/DoomFire/DoomFireRenderer.cs), [`DoomFire.shader`](../Assets/DoomFire/Materials/DoomFire.shader), [`DoomFire.mat`](../Assets/DoomFire/Materials/DoomFire.mat), [`Game.unity`](../Assets/Scenes/Game.unity))
-- [x] Post-test DoomFire tuning: bottom-up flame ignition (`preWarmOnStart = false`), rightward wind drift (`windDirection = 1`), and `32`-row `6.66×1.87` bounds in [`Game.unity`](../Assets/Scenes/Game.unity)
+- [x] Post-test DoomFire tuning: bottom-up flame ignition (`preWarmOnStart = false`), rightward wind drift (`windDirection = 1`), `32`-row `6.66×1.87` bounds in [`Game.unity`](../Assets/Scenes/Game.unity), and `_PaletteTex` sampler fix in [`DoomFire.shader`](../Assets/DoomFire/Materials/DoomFire.shader)
 - [x] Upgrade GitHub Pages landing page (`https://tamalrosita.com/FlappyBurger/`) with **Play Now!** CTAs linking to `https://tamalrosita.itch.io/flappy-bacon-a-tor`
 - [x] Cleanup confirmation (`Press/FlappyBACON-A-TOR_cover.png~` removed; `UserSettings/` retained)
-- [ ] Re-verify `DoomFireRenderer` ignition & wind in Unity Editor, commit changes, and open PR from `update/unity-6` → `main`
+- [x] Verify `DoomFireRenderer` ignition, wind, and gameplay in Unity Editor and merge `update/unity-6` → `main`

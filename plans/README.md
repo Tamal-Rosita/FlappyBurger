@@ -11,7 +11,8 @@ Keeping plans in a root-level `plans/` directory (outside `Assets/` and `docs/`)
 
 | ID | Date | Title | Branch | Status |
 | --- | --- | --- | --- | --- |
-| [001](001-unity6-migration-and-doomfire-optimization.md) | 2026-11-26 | Unity 6 Migration Audit & DoomFire Optimization Plan | `update/unity-6` | Implemented (Pending Testing & PR) |
+| [001](001-unity6-migration-and-doomfire-optimization.md) | 2026-11-26 | Unity 6 Migration Audit & DoomFire Optimization Plan | `update/unity-6` | Completed |
+| [002](002-pooling-highscore-and-music-player.md) | 2026-11-26 | Obstacle Pooling, High Score Persistence & OpenMusicPlayer | *(next branch)* | Proposed (WIP / Todo) |
 
 ## Naming & Workflow Convention
 

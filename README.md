@@ -17,10 +17,10 @@ A Flappy Bird-inspired 2D arcade game made in **Unity 6 (`6000.0.85f2`)** by **T
 
 ### Roadmap / Work in Progress
 
-- [ ] Health bar UI & death wiring (`HealthMeter.cs` is attached to `Player` in `Game.unity`)
-- [ ] Persistent high-score storage (`PlayerPrefs`)
+- [ ] Music system & "Now Playing" toast via [`Aestial/Unity-OpenMusicPlayer`](https://github.com/Aestial/Unity-OpenMusicPlayer) *(see [Plan 002](plans/002-pooling-highscore-and-music-player.md))*
 - [ ] Object pooling integration (`Pool.cs` in `Assets/Scripts/Models/Pool.cs`)
-- [ ] Dedicated flight & death animations
+- [ ] Persistent high-score storage (`PlayerPrefs`)
+- [ ] Health bar UI (`HealthMeter.cs`, deferred) & dedicated flight/death animations
 
 ## Themes
 

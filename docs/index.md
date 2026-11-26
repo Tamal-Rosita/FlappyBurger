@@ -104,7 +104,7 @@ Switch themes anytime from the **Skins** menu in [`Main.unity`](https://github.c
 | **Studio** | Tamal Rosita |
 | **Play Online** | [tamalrosita.itch.io/flappy-bacon-a-tor](https://tamalrosita.itch.io/flappy-bacon-a-tor) |
 | **Homepage** | [tamalrosita.com/FlappyBurger/](https://tamalrosita.com/FlappyBurger/) |
-| **Current Version** | `0.2.1` (Android `versionCode: 101`) |
+| **Current Version** | `0.2.3` (Android `versionCode: 0230`) |
 | **Unity Version** | `6000.0.85f2` (Unity 6) |
 | **Target Platforms** | WebGL (PWA), Android, iOS, Standalone |
 | **Build Scenes** | `Main.unity` (Menu) &rarr; `Game.unity` (Gameplay) |
@@ -125,10 +125,10 @@ Switch themes anytime from the **Skins** menu in [`Main.unity`](https://github.c
 - Android, iOS, and WebGL PWA icon & build assets
 
 ### In Progress / Roadmap
-- **Health Meter (`HealthMeter.cs`)**: Component is attached to `Player` in `Game.unity` (`maxHealth = 3`), awaiting UI bar hookup and `onDeath` wiring
-- **Persistent High Score**: `GameManager` currently shows the current run's score in `highScoreText` on Game Over; `PlayerPrefs` best-score tracking is planned
-- **Object Pooling (`Pool.cs`)**: Generic pool helper exists in `Assets/Scripts/Models/Pool.cs` to replace `Instantiate`/`Destroy` in `ObstacleSpawner`
-- **Dedicated Flight & Death Animations**: Expand `SpriteAnimation` beyond frame reset on jump
+- **Original Soundtrack & Music Player ([`OpenMusicPlayer`](https://github.com/Aestial/Unity-OpenMusicPlayer))**: Showcase original music score with persistent playback across scenes, Main Menu player controls, and "Now Playing" popup notifications
+- **Object Pooling (`Pool.cs`)**: Integrate `Assets/Scripts/Models/Pool.cs` into `ObstacleSpawner` to eliminate runtime `Instantiate`/`Destroy` calls
+- **Persistent High Score (`PlayerPrefs`)**: Save best score locally and wire both `Score_Panel` and `High Score_Panel (01)` on Game Over
+- **Future Polish**: Health meter UI (`HealthMeter.cs` in `Assets/Scripts/Player/`) and dedicated flight & death animations
 
 ---
 

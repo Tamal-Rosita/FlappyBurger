@@ -86,7 +86,8 @@ Both scenes are registered in `ProjectSettings/EditorBuildSettings.asset`:
 | `SpriteAnimation.cs` | Cycles through a `Sprite[]` array using `InvokeRepeating`; `SetFrame(0)` restarts the flap cycle on jump. |
 | `RandomSound.cs` | Plays a random `SoundFX` (`AudioClip` + `volume`) via `AudioSource.PlayOneShot`. |
 | `SpriteScrolling.shader` | Custom `Custom/Sprite Scrolling` shader offsetting sprite UVs by `_Time * _ScrollSpeed`. |
-| `ScreenFire.cs` | CPU Doom fire propagation rendered in `OnGUI()` using a `Gradient`, tile grid (`tileSize`), and `Texture`. |
+| `DoomFire.shader` | Custom `Custom/DoomFire` shader sampling an `R8` intensity texture and mapping colors through a `256x1` gradient LUT in 1 draw call. |
+| `DoomFireRenderer.cs` | Fixed-grid CPU Doom fire simulation (`R8` `Texture2D`, `FilterMode.Point`) rendered via `SpriteRenderer` over the bottom hazard strip (`ScreenFire.cs` retained for legacy demo scenes). |
 
 ---
 

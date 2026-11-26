@@ -1,6 +1,6 @@
 # Plan 001: Unity 6 Migration Audit & DoomFire Optimization
 
-- **Status**: Proposed (Awaiting Decisions)
+- **Status**: Implemented (Pending Testing & PR)
 - **Date**: 2026-11-26
 - **Branch**: `update/unity-6` → `main`
 
@@ -87,18 +87,18 @@ Keep the classic retro Doom fire cellular automaton while reducing rendering fro
 
 ---
 
-## Open Decisions
+## Open Decisions (Resolved)
 
-- [ ] **Fire Coverage Area**: Cover only the bottom hazard strip (matching `Fire`'s `BoxCollider2D`) or extend higher up the screen?
-- [ ] **Cell Visual Style**: Keep the circular/square tile mask (`Circle.png` / `Square.png`) inside the shader, or render pure crisp retro pixel cells (`FilterMode.Point`)?
-- [ ] **Pre-PR Repo Cleanup**: Untrack `UserSettings/` in `.gitignore` and remove `Press/FlappyBACON-A-TOR_cover.png~` before opening the PR to `main`?
+- [x] **Fire Coverage Area**: Cover only the bottom hazard strip (matching `Fire`'s `BoxCollider2D` bounds).
+- [x] **Cell Visual Style**: Render pure crisp retro pixel cells (`FilterMode.Point`), no tile masks needed.
+- [x] **Pre-PR Repo Cleanup**: Keep `UserSettings/` tracked for cross-workstation editor configs; `Press/FlappyBACON-A-TOR_cover.png~` removed manually.
 
 ---
 
 ## Pre-PR Verification Checklist
 
-- [ ] Apply `FindObjectsByType` fix in [`SkinSystem.cs`](../Assets/Scripts/Skins/SkinSystem.cs#L23)
-- [ ] Implement fixed-grid `R8` + LUT shader DoomFire replacement
-- [ ] Resolve optional cleanup items (`UserSettings/`, `FlappyBACON-A-TOR_cover.png~`)
+- [x] Apply `FindObjectsByType` fix in [`SkinSystem.cs`](../Assets/Scripts/Skins/SkinSystem.cs#L23)
+- [x] Implement fixed-grid `R8` + LUT shader DoomFire replacement ([`DoomFireRenderer.cs`](../Assets/DoomFire/DoomFireRenderer.cs), [`DoomFire.shader`](../Assets/Materials/DoomFire.shader), [`DoomFire.mat`](../Assets/Materials/DoomFire.mat), [`Game.unity`](../Assets/Scenes/Game.unity))
+- [x] Cleanup confirmation (`Press/FlappyBACON-A-TOR_cover.png~` removed; `UserSettings/` retained)
 - [ ] Test `Main.unity` and `Game.unity` in Editor + WebGL/Android build
-- [ ] Open PR from `update/unity-6` → `main`
+- [ ] Commit changes and open PR from `update/unity-6` → `main`

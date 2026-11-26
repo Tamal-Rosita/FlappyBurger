@@ -47,7 +47,7 @@ Most gameplay values are exposed directly on scene components and prefabs:
 | Spawn Interval | `Game.unity` &rarr; `ObstacleSpawner.spawnInterval` | `2` s |
 | Gap Distance | `Game.unity` &rarr; `ObstacleSpawner.gapDistance` | `3.5` |
 | Obstacle Speed | `Assets/Prefabs/Obstacle.prefab` &rarr; `MoveOnAxis2D.speed` | `-2` |
-| Fire Update Rate / Size | `Game.unity` &rarr; `Fire` &rarr; `ScreenFire` | Inspector sliders |
+| Fire Update Rate / Grid | `Game.unity` &rarr; `Fire` &rarr; `DoomFireRenderer` | `0.075` s / `16` rows |
 
 In Edit Mode, you can preview pipe spacing on `Obstacle.prefab` using the **SetDistance** and **SetSize** NaughtyAttributes buttons on `GapDistance`, `ChildrenDistance2D`, and `BoxCollider2DSize`.
 

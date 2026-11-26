@@ -10,7 +10,7 @@ A Flappy Bird-inspired 2D arcade game made in **Unity 6 (`6000.0.85f2`)** by **T
 
 - **One-button gameplay**: Tap, left-click, or press `Space` to start and flap.
 - **Three selectable visual themes**: **Heaven**, **Darkness**, and **Inferno** (`ScriptableObject` skins persisted via `PlayerPrefs`).
-- **Scrolling background & DoomFire overlay**: Custom `Custom/Sprite Scrolling` shader plus CPU-driven `ScreenFire` (`Assets/DoomFire/ScreenFire.cs`).
+- **Scrolling background & DoomFire hazard strip**: Custom `Custom/Sprite Scrolling` shader plus fixed-grid `DoomFireRenderer` (`Assets/DoomFire/DoomFireRenderer.cs`) with `Custom/DoomFire` LUT shader.
 - **Inspector-driven tuning**: Gravity, jump force, spawn interval, pipe gap distance, and obstacle speed are all exposed in the Inspector (`NaughtyAttributes` buttons included).
 - **Multi-platform ready**: Configured for Android (`com.tamalrosita.flappyburger`), iOS (`com.Aestial.FlappyBurger`), and WebGL (PWA).
 

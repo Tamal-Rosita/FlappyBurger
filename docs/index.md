@@ -38,7 +38,7 @@ title: Overview
 - **One-button arcade loop**: Tap the screen, left-click, or press `Space` to start the run and flap upward.
 - **Scoring**: Passing through the center trigger between each top and bottom pipe increments the live score counter.
 - **Game Over**: Colliding with pipes, the ceiling, or the lower hazard triggers a randomized explosion sound effect, freezes time (`Time.timeScale = 0`), and opens the Game Over overlay with **AGAIN** (retry) and **EXIT** (return to main menu).
-- **DoomFire Effect**: The gameplay scene renders a real-time CPU-driven Doom-style fire overlay (`ScreenFire`) across the bottom of the screen.
+- **DoomFire Effect**: The gameplay scene renders a fixed-grid retro Doom-style fire strip (`DoomFireRenderer` + `Custom/DoomFire` shader) along the bottom hazard collider in a single GPU draw call.
 
 ---
 
@@ -73,7 +73,7 @@ Players can switch themes in the **Skins** menu (`Main.unity`). The selected the
 - Procedural pipe spawning with Inspector-tunable gap distance, spawn rate, and vertical variation
 - Live score HUD and Game Over retry/exit flow
 - Randomized flap and explosion sound effects
-- CPU-based DoomFire bottom screen effect (`Assets/DoomFire/ScreenFire.cs`)
+- Hybrid fixed-grid DoomFire hazard strip (`DoomFireRenderer.cs` + `Custom/DoomFire` shader)
 - Android, iOS, and WebGL PWA icon & build assets
 
 ### In Progress / Roadmap
